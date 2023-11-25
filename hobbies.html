@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Nirjhar Nath - Hobbies</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+    }
+    
+    header {
+      background-color: #060039;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .nav-toggle {
+      position: absolute;
+      top: 4px;
+      right: -50px;
+      display: block;
+      cursor: pointer;
+      padding: 10px;
+    }
+    
+    .nav-toggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin-bottom: 5px;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 185px;
+      height: 100vh;
+      background-color: #060039;
+      color: #fff;
+      padding: 20px;
+      transform: translateX(-220px);
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .show-sidebar {
+      transform: translateX(0);
+    }
+    
+    .nav-menu {
+        list-style-type:none; 
+        margin-top:30px; 
+        padding-left:-20px; 
+        font-size:x-large; 
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        font-weight:bold; 
+        text-align:center; 
+        text-decoration:none; 
+        color:white; 
+        text-shadow:black -1px -1px, black -1px -1px, black -1px -1px, black -1px -1px
+    }
+    
+    .nav-menu li {
+      margin-bottom: 10px;
+    }
+    
+    .nav-menu li a {
+        color:white; 
+        text-decoration:none; 
+        font-size:x-large; 
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        font-weight:bold; 
+        display:block; 
+        padding-top:-10px
+    }
+    
+    .nav-menu li a:hover {
+      color: #ccc;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 80px auto 20px;
+      padding: 0 20px;
+    }
+
+    .poem p {
+        margin: 5px 0;
+    }
+    
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    
+    li {
+      margin-bottom: 5px;
+    }
+    
+    a {
+      color: #333;
+    }
+    
+    .sidebar.show-sidebar .nav-toggle span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .sidebar.show-sidebar .nav-toggle span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .sidebar.show-sidebar .nav-toggle span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    .hidden {
+            display: none;
+    }
+
+    /* Media queries */
+    @media screen and (max-width: 600px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        transform: translateX(0);
+        z-index: 1;
+      }
+    
+      .nav-toggle {
+        display: none;
+      }
+    }
+  </style>
+  </style>
+  <script type="text/javascript">
+  MathJax = {
+    tex: {
+      inlineMath: [
+        ['$', '$']
+      ],
+      displayMath: [
+        ['\\[', '\\]']
+      ],
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+  <header>
+    <div class="logo">Nirjhar Nath - Hobbies</div>
+  </header>
+
+  <div class="sidebar" id="sidebar">
+    <div class="nav-toggle" onclick="toggleSidebar()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="home_new.html">Home</a></li>
+      <li><a href="courses_new.html">Courses</a></li>
+      <li><a href="hobbies_new.html">Hobbies</a></li>
+      <li><a href="https://mathematical-discussions.blogspot.com/">Blog</a></li>
+      <li><a href="home_new.html#contact">Contact</a></li>
+      <li><a href="home_new.html#news">News</a></li>
+      <li><a href="shiny_new.html">Shiny Apps</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1>Hobbies</h1>
+    <p>I welcome you to the hobbies section of my homepage. Here, I'd like to share a glimpse of what I do apart from the usual academic stuff. </p>
+    <hr style="border-color: rgb(14, 159, 125);">
+    <h2>Music</h2>
+    <p>I love listening to any kind of music. Some of my favourite songs/bands that I can recall at this moment are listed below:</p>
+    <ul>
+        <li><b>Rabindrasangeet:</b> Purano Sei Diner Katha, Kotobaro Bhebechinu, Aguner Poroshmoni, Ore Nuton Juger Bhore, Amaro Porano Jaha Chay, etc.</li>
+        <li><b>Adhunik Bangla gaan:</b> Ami Taar Thikana Rakhini (Manna Dey), Katha Dao Aabar Asbe (Manna Dey), Ghum Ghum Chand Jhikimiki Tara (Sandhya Mukhopadhyay), Path Harabo Bolei Ebar (Hemanta Mukhopadhyay), Oliro Kotha Sune Bokul Hase (Hemanta Mukhopadhyay), Chole Jete Jete Din (Lata Mangeshkar), Na Mono Lage Na (Lata Mangeshkar), Kon Se Alor Swapno Niye (Asha Bhosle), etc.</li>
+        <li><b>Rock/Metal:</b> I listen to Guns N' Roses, AC/DC, Metallica and Dragonforce. Some bengali bands I listen to are Fossils, Moheener Ghoraguli, Nemesis, Shironamhin and Aurthohin.</li>
+    </ul>
+    <hr style="border-color: rgb(14, 159, 125);">
+    <h2>Books</h2>
+    <p>I generally read non-fiction. Here is a list of some of the books I read:</p>
+    <ul>
+        <li>"Thinking, Fast and Slow" by Daniel Kahneman</li>
+        <li>"How to Win Friends and Influence People" by Dale Carnegie</li>
+        <li>"Jungle ways" by William Seabrook</li>
+        <li>"Bhagavad Gita As It Is" by Srila Prabhupada</li>
+        <li>"Buffalo Nationalism: A Critique of Spiritual Fascism" by Kancha Ilaiah Shepherd</li>
+        <li>"The Psychology of Stupidity" by Jean-Francois Marmion</li>
+    </ul>
+    <hr style="border-color: rgb(14, 159, 125);">
+    <h2>Poems</h2>
+    <p>I have written some poems in bengali and english. I have added some of them below:</p>
+    <ul>
+        <div class="poem">
+        <h3>Kingly Guise, Thirsty Soul</h3>
+        <p>Oh, woe betide his soul: forlorn and lone—</p>
+        <p>Amidst a crowd that deems him as their own.</p>
+        <p>Adorned in royal robes with pomp and flair,</p>
+        <p>He hides a thirst that none can repair.</p>
+        <br>
+        <p>In robes of gold, he walks the streets,</p>
+        <p>With jesters and minstrels at his feet;</p>
+        <p>Yet, his heart aches with a yearning deep,</p>
+        <p>For a friend to hold, or a lover to keep.</p>
+        <br>
+        <p>No crown or scepter can quench this thirst—</p>
+        <p>That burns within, and leaves him cursed;</p>
+        <p>A young man, lost in kingly guise,</p>
+        <p>Amidst the cheers and joyful cries.</p>
+        <br>
+        <p>Alas! The irony of fate, he bears,</p>
+        <p>A regal mask that hides despair;</p>
+        <p>For all his grandeur and pompous display,</p>
+        <p>His loneliness refuses to go away.</p>
+        <br>
+        <p>So, let the world see him as they may:</p>
+        <p>A king, a ruler, in grand array;</p>
+        <p>But deep within, he remains the same—</p>
+        <p>A thirsty young man, seeking love's sweet flame.</p>
+    </div>
+    </ul>
+    <hr style="border-color: rgb(14, 159, 125); width: 50%; margin: 0;">
+
+    <ul>
+        <div class="poem">
+        <h3>পথহারা</h3>
+        <p>আমি দেখিতেছি চারিদিকে ঘন অন্ধকার,</p>
+        <p>সর্বত্রে ব্যথা, সর্বত্রে শুধুমাত্র হাহাকার।</p>
+        <p>শুনিতেছি লক্ষজনের বক্ষ-ফাটা ক্রন্দন;</p>
+        <p>এ বিশ্ব ক্ষণস্থায়ী, ব্যথাই কি চিরন্তন?</p>
+        <br>
+        <p>জানি না উঠেছি কার নৌকায়,</p>
+        <p>জানি না সে যাইতেছে কোন রাস্তায়।</p>
+        <p>আজি অতীত স্মৃতি মনে আসে অবিরল,</p>
+        <p>তাই বুকে শুধুই বিষন্নতার কোলাহল।</p>
+        <br>
+        <p>যদি ও কখনো ভাগ্য খুঁজে পাই,</p>
+        <p>সন্ধান করিব আমি বিলীনতার ঠাঁই।</p>
+        <p>ভালোবাসিবো আঁধার রাতে মিষ্টি চাঁদের মিষ্টি হাসি,</p>
+        <p>সুখের মন্দিরে আমি কাঁদিব বসি।</p>
+        <br>
+        <p>পৌঁছেছি নামহীন রাস্তায় এমনি লক্ষীছাড়া,</p>
+        <p>আমি পথহীন পথে হইলাম পথহারা।</p>
+
+    </div>
+    </ul>
+    <hr style="border-color: rgb(14, 159, 125); width: 50%; margin: 0;">
+
+    <ul>
+        <div class="poem">
+        <h3>তোমার পুরোনো নাম</h3>
+        <p>প্রকাশি তব নগরে, কোথায় তুমি হেরে?</p>
+        <p>নেই তুমি আশেপাশে—</p>
+        <p>তবু বেঁচে আছো আমার গানের সুরে।</p>
+        <p>আকাশে নক্ষত্র, বৃষ্টির দিনে,</p>
+        <p>স্বপ্নের মাঝে হাঁটা আমার মনে—</p>
+        <p>তোমার সেই পুরোনো নাম।</p>
+        <br>
+        <p>আজি এই অবেলায়, অস্থির কি কভুও দেখি তোমায়?</p>
+        <p>যদিও পুড়ে ছাই হৃদয় তোমার...</p>
+        <p>তবুও জানি, ভালোবাসো তুমি শুধু আমায়।</p>
+        <p>বৃষ্টির মেঘে ঢেউ ছুঁয়ে গেলে,</p>
+        <p>মনের দুঃখ জ্বলে উঠে বেলে—</p>
+        <p>মন্দ জলের মাঝে আকাশের রঙে।</p>
+        <br>
+        <p>ছায়া-নৃত্য আড়ালে, চাঁদের পাতালে,</p>
+        <p>শান্ত সুরগুলি আত্মবোধে ভরে।</p>
+        <p>তাই বিরহের গান সর্বাঙ্গে খেলে।</p>
+        <p>আশার আবেগ মিশে যায় প্রফুল্লিত বাতাসে,</p>
+        <p>সুবাসহারা ফুলেরাও আজ কেঁদে কেঁদে হাসে—</p>
+        <p>নতুন ভোরের আশায়।</p>
+        <br>
+        <p>হায় নেই কোন নতুন সকাল,</p>
+        <p>নেই কোনো পাখির গান।</p>
+        <p>মৃত্যুর আমন্ত্রনে সেই পুরোনো চিঠি,</p>
+        <p>আর তোমার সেই পুরোনো নাম।</p>
+
+
+    </div>
+    </ul>
+    <hr style="border-color: rgb(14, 159, 125);">
+    <h2>Math Quizzes (Olympiad)</h2>
+    <p>Me along with some math olympiad enthusiasts organised some quizzes for students in our district. Our main aim was popularizing math olympiads in our state. I have put the quizzes below. </p>
+    <ul>
+        <li><a href="https://drive.google.com/u/0/uc?id=1R0SnuwgC88dban8allD6rPE5f85MCXd6&export=download">Pi Approximation Day Mathquiz 2023</a></li>
+        <li><a href="https://drive.google.com/u/0/uc?id=1XsIXOyrVGJCEFwRDFP0m0q16d-dUuKXu&export=download">Pi Approximation Day Mathquiz 2022</a></li>
+        <li><a href="https://drive.google.com/u/0/uc?id=1fjG4Z4K7b57B5SpPGsfMFIhvsSsKeX0M&export=download">Pi Approximation Day Mathquiz 2021</a></li>
+    </ul>
+    <hr style="border-color: rgb(14, 159, 125);">
+  </div>
+  <h5>
+    <span style="display: block; text-align: center;">© Nirjhar Nath</span>
+  </h5>
+
+  <!-- JavaScript code -->
+  <script>
+    function toggleSidebar() {
+      var sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('show-sidebar');
+    }
+
+    function showContent(id) {
+            var content = document.getElementById(id);
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+            } else {
+                content.classList.add('hidden');
+            }
+        }
+  </script>
+</html>
