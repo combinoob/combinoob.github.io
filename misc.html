@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <!-- Your Google Analytics script or any other tracking script can go here -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Your personal description goes here">
+
+    <link rel="icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="search" type="application/opensearchdescription+xml" title="Nirjhar Nath" href="/opensearch.xml">
+
+    <!-- Include MathJax-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Customize the color scheme if needed -->
+    <meta name="color-scheme" content="light dark">
+    <!-- Update the Bootstrap link if you prefer a different theme -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightshade.min.css"
+        rel="stylesheet">
+    <script type="module" crossorigin="" src="/assets/index-e210c696.js"></script>
+    <link rel="stylesheet" href="/assets/index-efbf9d7d.css">
+
+    <title>Nirjhar Nath</title>
+
+
+    <style>
+        /* Add custom styles for the sidebar */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidebar .close-btn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        /* Styles for the toggle button */
+        .toggle-mode {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 5);
+        }
+
+        /* Add styling for the quote */
+        .quote {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .quote-icon {
+            font-size: 36px;
+            margin-right: 5px;
+        }
+
+        .quote-text {
+            font-style: italic;
+            font-size: 20px;
+        }
+
+        .quote-author {
+            font-size: 18px;
+            margin-top: 10px;
+            display: block;
+        }
+
+
+        section {
+            margin-bottom: 40px; /* Increase margin bottom for better separation */
+        }
+
+        section h3 {
+            font-size: 24px; /* Increase font size for section headings */
+            margin-bottom: 15px; /* Adjust margin bottom for spacing */
+        }
+
+        section p {
+            font-size: 18px; /* Increase font size for paragraphs */
+            line-height: 1.6; /* Adjust line height for better readability */
+            margin-bottom: 20px; /* Adjust margin bottom for spacing */
+        }
+
+        section ul {
+            font-size: 18px; /* Increase font size for list items */
+            line-height: 1.6; /* Adjust line height for better readability */
+            margin-bottom: 20px; /* Adjust margin bottom for spacing */
+        }
+
+        section ul li {
+        margin-bottom: 5px; /* Adjust margin bottom for spacing between list items */
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .display-4 {
+            animation: slideIn 1.5s ease forwards;
+        }
+
+        .dark a {
+            color: #ffffff !important; /* Set link color to white */
+        }
+
+        /* Additional styling for the image */
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .navbar-nav .nav-link[href="misc.html"] {
+            color: rgb(60, 60, 205) !important;
+        }
+
+        .dark .navbar-nav .nav-link[href="misc.html"] {
+            color: rgb(125, 125, 214) !important;
+        }
+
+        .profile-image {
+            max-width: 100%; /* Ensure the image doesn't exceed the width of its container */
+            height: auto; /* Maintain the aspect ratio of the image */
+            display: block; /* Ensure the image behaves as a block element */
+            margin: 20px auto; /* Add margin to center the image horizontally and provide spacing */
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+        <!-- Your website content goes here -->
+        <!-- Replace the following with your own navigation, header, and other content -->
+        <div>
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+                <div class="container">
+                    <!-- Your logo or brand image goes here -->
+                    <a class="navbar-brand">Nirjhar Nath</a>
+                    <!-- Toggle button for sidebar -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- Your navigation links for desktop view -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="me-auto navbar-nav">
+                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="courses.html">Courses</a>
+                            <a class="nav-link" href="misc.html">Miscellaneous</a>
+                            <a class="nav-link" href="shiny.html">Shiny Apps</a>
+                            <a class="nav-link" href="research.html">Research</a>
+                            <a class="nav-link" href="index.html#news">News</a>
+                            <a class="nav-link" href="index.html#contact">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Sidebar content -->
+            <div class="sidebar" id="sidebar">
+                <!-- Close button for sidebar -->
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <!-- Navigation links for mobile view -->
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="misc.html">Miscellaneous</a>
+                <a href="shiny.html">Shiny Apps</a>
+                <a href="research.html">Research</a>
+                <a href="index.html#news">News</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <!-- Main content area -->
+            <div class="mt-5 mb-5 container">
+                <h1 class="display-4 text-center">Miscellaneous...</h1>
+                <br>
+                <!-- Use this website format -->
+                <section>
+                    <h3 id="use_site">Use this website format?</h3>
+                    <p>
+                      You are free to steal this website's source code that is available in the <code>combinoob.github.io</code> repository of my <a href="https://github.com/combinoob/" target="_blank">Github profile</a>. If you use the exact same format and/or styles from <code>style.css</code> or <code>sript.js</code> of the repository, please mention this or use the following for the footer of your website.
+
+                    <!-- Footer content in a code box -->
+                    <section>
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-md-8">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h3 class="card-title text-center mb-4"></h3>
+                                            <pre id="codeBox">
+&lt;footer class="footer"&gt;
+    &lt;div class="container text-center"&gt;
+        &lt;span class="text-muted"&gt;&amp;copy; &lt;a href="https://combinoob.github.io"&gt;Nirjhar Nath&lt;/a&gt;&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/footer&gt;
+                                            </pre>
+                                            <button class="btn btn-primary" onclick="copyCode()">Copy Code</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section> 
+                    </p>
+                    <p>                   
+                    If you like the <code>light</code> mode as default, you can replace <code>&lt;html lang="en" class="dark"&gt;</code> by <code>&lt;html lang="en" class="light"&gt;</code> in line 2 of every <code>.html</code> file of the <code>combinoob.github.io</code> repository.
+                    </p>
+                    <p>
+                        I have been considering updating my website for a while now. My old website still lives in the <code>old-website</code> repository of my <a href="https://github.com/combinoob/">GitHub profile</a>. You are allowed to use the source code of this website also, including the above footer in the <code>.html</code> file of your website. The <code>old-website</code> looks like the following:
+                    </p>
+                    <img src="https://combinoob.github.io/images/sample_site1.png" alt="Old Website" class="profile-image">
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- Your footer content goes here -->
+    <footer class="footer">
+        <div class="container text-center">
+            <span class="text-muted">&copy; Nirjhar Nath</span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript bundle (including Popper) -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript for sidebar toggle -->
+    <script>
+        function openNav() {
+            document.getElementById("sidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("sidebar").style.width = "0";
+        }
+
+        // Function to toggle between dark and light mode
+        function toggleMode() {
+            const htmlElement = document.documentElement;
+            htmlElement.classList.toggle('dark');
+            const toggleButton = document.getElementById('toggleButton');
+            if (htmlElement.classList.contains('dark')) {
+                toggleButton.textContent = '☀️';
+            } else {
+                toggleButton.textContent = '🌙';
+            }
+        }
+
+        function copyCode() {
+            const codeBox = document.getElementById('codeBox');
+            const range = document.createRange();
+            range.selectNode(codeBox);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
+            alert('Code copied to clipboard!');
+        }
+    </script>
+
+    <!-- Button for toggling dark/light mode -->
+    <button id="toggleButton" class="toggle-mode" onclick="toggleMode()">☀️</button>
+</body>
+
+</html>
