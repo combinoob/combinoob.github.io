@@ -1,402 +1,692 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="dark">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Nirjhar Nath - Courses</title>
-  <style>
-    /* CSS styles */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      font-size: 18px;
-      letter-spacing: 0.5px;
-    }
-    
-    header {
-      background-color: #060039;
-      color: #fff;
-      padding: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      width: 100%;
-    }
-    
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      margin: 0 auto;
-      text-align: center;
-    }
-    
-    .nav-toggle {
-      position: absolute;
-      top: 4px;
-      right: -50px;
-      display: block;
-      cursor: pointer;
-      padding: 10px;
-    }
-    
-    .nav-toggle span {
-      display: block;
-      width: 25px;
-      height: 3px;
-      background-color: #fff;
-      margin-bottom: 5px;
-      transition: transform 0.3s ease-in-out;
-    }
-    
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 185px;
-      height: 100vh;
-      background-color: #060039;
-      color: #fff;
-      padding: 20px;
-      transform: translateX(-220px);
-      transition: transform 0.3s ease-in-out;
-    }
-    
-    .show-sidebar {
-      transform: translateX(0);
-    }
-    
-    .nav-menu {
-        list-style-type:none; 
-        margin-top:30px; 
-        padding-left:-20px; 
-        font-size:x-large; 
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-        font-weight:bold; 
-        text-align:center; 
-        text-decoration:none; 
-        color:white; 
-        text-shadow:black -1px -1px, black -1px -1px, black -1px -1px, black -1px -1px
-    }
-    
-    .nav-menu li {
-      margin-bottom: 10px;
-    }
-    
-    .nav-menu li a {
-        color:white; 
-        text-decoration:none; 
-        font-size:x-large; 
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-        font-weight:bold; 
-        display:block; 
-        padding-top:-10px
-    }
-    
-    .nav-menu li a:hover {
-      color: #ccc;
-    }
+    <!-- Your Google Analytics script or any other tracking script can go here -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Your personal description goes here">
 
-    .content {
-      max-width: 800px;
-      margin: 80px auto 20px;
-      padding: 0 20px;
-    }
-    
-    h2 {
-      font-size: 24px;
-      font-weight: bold;
-      margin-top: 30px;
-    }
+    <link rel="icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="search" type="application/opensearchdescription+xml" title="Nirjhar Nath" href="/opensearch.xml">
 
-    h3 {
-      font-size: 20px;
-      font-weight: bold;
-      margin-top: 20px;
-    }
-    
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-      margin-top: 10px;
-    }
-    
-    li {
-      margin-bottom: 5px;
-    }
-    
-    a {
-      color: #333;
-    }
-    
-    .sidebar.show-sidebar .nav-toggle span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    
-    .sidebar.show-sidebar .nav-toggle span:nth-child(2) {
-      opacity: 0;
-    }
-    
-    .sidebar.show-sidebar .nav-toggle span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
-    }
+    <!-- Customize the color scheme if needed -->
+    <meta name="color-scheme" content="light dark">
+    <!-- Update the Bootstrap link if you prefer a different theme -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightshade.min.css"
+        rel="stylesheet">
+    <script type="module" crossorigin="" src="/assets/index-e210c696.js"></script>
+    <link rel="stylesheet" href="/assets/index-efbf9d7d.css">
+    <title>Nirjhar Nath</title>
 
-    .hidden {
-            display: none;
-    }
 
-    /* Media queries */
-    @media screen and (max-width: 600px) {
-      .sidebar {
-        width: 100%;
-        height: auto;
-        padding: 20px;
-        transform: translateX(0);
-        z-index: 1;
-      }
-    
-      .nav-toggle {
-        display: none;
-      }
-    }
-  </style>
-  </style>
-  <script type="text/javascript">
-  MathJax = {
-    tex: {
-      inlineMath: [
-        ['$', '$']
-      ],
-      displayMath: [
-        ['\\[', '\\]']
-      ],
-    }
-  };
-</script>
-<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-</head>
-<body>
-  <header>
-    <div class="logo">Nirjhar Nath - Courses</div>
-  </header>
+    <style>
+        /* Add custom styles for the sidebar */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
 
-  <div class="sidebar" id="sidebar">
-    <div class="nav-toggle" onclick="toggleSidebar()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <ul class="nav-menu">
-      <li><a href="home.html">Home</a></li>
-      <li><a href="courses.html">Courses</a></li>
-      <li><a href="hobbies.html">Hobbies</a></li>
-      <li><a href="https://mathematical-discussions.blogspot.com/">Blog</a></li>
-      <li><a href="home.html#contact">Contact</a></li>
-      <li><a href="home.html#news">News</a></li>
-      <li><a href="shiny.html">Shiny Apps</a></li>
-      <li><a href="research.html">Research</a></li>
-    </ul>
-  </div>
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
 
-  <div class="content">
-    <h1>Courses</h1>
-    <p>I have added some files (which I could find) related to my coursework here at CMI, which might be useful. There may be errors in notes as well as assigment solutions. </p>
-    <h2>First Semester</h2>
-    <ul>
-        <li><a href="#linear-algebra" onclick="showContent('linear-algebra-content')">Linear Algebra</a>
-            <div id="linear-algebra-content" class="hidden">
-                <b> Instructor: Upendra Kulkarni </b>
-                <ul>
-                    <li>HW (with solutions)
-                        <ul>
-                            <li><a href="https://combinoob.github.io/courses/alg1/hw1.pdf" target="_blank">HW 1</a></li>
-                            <li><a href="https://drive.google.com/u/0/uc?id=167IWqM7uMCaff9NDiLv2jPE_fO6ok4it&export=download" target="_blank">HW 2</a></li>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1KchRCLPhfKizgOqrNKviSEEp7qCc9dmg&export=download" target="_blank">HW 3</a></li>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1wzwzTmCc6277kZxoo2_Zm9Khv-ICJpXf&export=download" target="_blank">HW 4</a></li>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1sysHyQjnbuQWP4tKHkQ9dDubS1dNgXE0&export=download" target="_blank">HW 5</a></li>
-                        </ul>
-                    </li>
-                    <li>Quizzes
-                        <ul>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1o5LlvsjiRrTkbhxJ-OgSVagALOlDlNey&export=download" target="_blank">Quiz 1</a></li>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1oyyamQ34Dc1W9KH_CZwT76skuCEQsf0x&export=download" target="_blank">Quiz 2</a></li>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1riUyVCTz4xOPmGMSY5sEkTQIGXHmCwJo&export=download" target="_blank">Quiz 3</a></li>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1-9aN1M0i6v_JP7QJAgrasDlfWz2BVmo-&export=download" target="blank">Quiz Answers (Draft)</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="https://drive.google.com/u/0/uc?id=1iMy3IrYIXqq7Cg0LKzqLBdrNzDyldqii&export=download" target="_blank">Midsem</a></li>
-                    <li><a href="https://drive.google.com/u/0/uc?id=1riUyVCTz4xOPmGMSY5sEkTQIGXHmCwJo&export=download" target="_blank">Endsem</a></li>
-                    <li><a href="https://drive.google.com/drive/folders/1AOrSMyrc0o57CpdDNYVnxAmhokLBBkOz" target="blank">Lecture videos and notes</a></li>
-                </ul>
-            </div>
-        </li>
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
 
-        <li><a href="#real-analysis" onclick="showContent('real-analysis-content')">Real Analysis</a>
-            <div id="real-analysis-content" class="hidden">
-                <b>Instructor: Krishna Hanumanthu</b>
-                <ul>
-                    <li>Quizzes
-                        <ul>
-                            <li><a href="https://drive.google.com/u/0/uc?id=10ggHs4JmXd04MgAgviuxRFcS5bGUe-Xh&export=download" target="blank">Quiz 1</a></li>
-                            <li>Quiz 2</li>
-                            <li>Quiz 3</li>
-                            <li>Quiz 4</li>
-                        </ul>
-                    </li>
-                    <li><a href="https://drive.google.com/u/0/uc?id=1mZ2VDcAOyLOSIb5yi9SYlJ16WOZN36CC&export=download" target="blank">Midsem</a></li>
-                    <li><a href="https://drive.google.com/u/0/uc?id=1nF_fcA7LcAF7FOy9J-wGWwdNJh-23xzP&export=download" target="blank">Endsem</a></li>
-                </ul>
-            </div>
-        </li>
+        .sidebar .close-btn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
 
-        <li><a href="#haskell" onclick="showContent('haskell-content')">Haskell</a>
-            <div id="haskell-content" class="hidden">
-                <b>Instructor: S.P. Suresh</b>
-                <ul>
-                    <li>Assignments
-                        <ul>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1f__kD4otrYPPPcR3zfnij3flHl2HsuSz&export=download" target="blank">Assigment 1</a></li>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1R3SIAYhOSA5SHx-5zM94rDS5eIqY7613&export=download" target="blank">Assigment 2</a></li>
-                            <li><a href="https://drive.google.com/u/0/uc?id=17zyNsjZOb0yn9C2zd4YCGqd5XKASNFJS&export=download" target="blank">Assigment 3</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="https://drive.google.com/u/0/uc?id=11EEkDCXZOmaw5BJsv89jW-DS7GMUwTu-&export=download" target="blank">Midsem</a></li>
-                    <li><a href="https://drive.google.com/u/0/uc?id=1whUUsvYPguE0esOFutefl6XeEPYUbx5d&export=download" target="blank">Endsem</a></li>
-                </ul>
-            </div>
-        </li>
+        /* Styles for the toggle button */
+        .toggle-mode {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 5);
+        }
 
-        <li><a href="#english" onclick="showContent('english-content')">English</a>
-            <div id="english-content" class="hidden">
-                <b>Instructor: Usha Mahadevan</b>
-                <ul>
-                    <li><a href="https://drive.google.com/u/0/uc?id=1xwFDaQJf-Ly7XF6MTG5XRm17V2HTjCbZ&export=download" target="_blank">Midsem</a></li>
-                    <li>Endsem</li>
-                </ul>
-            </div>
-        </li>
+        /* Add styling for the quote */
+        .quote {
+            text-align: center;
+            margin-top: 20px;
+        }
 
-        <li><a href="#mechanics" onclick="showContent('mechanics-content')">Classical Mechanics</a>
-            <div id="mechanics-content" class="hidden">
-                <b>Instructor: Govind Krishnaswami</b>
-                <ul>
-                    <li><a href="https://drive.google.com/u/0/uc?id=1NbKGFIqY5kAX_9-YH-AxMXupOQXg82F-&export=download" target="_blank">Endsem</a></li>
-                </ul>
-            </div>
-        </li>
+        .quote-icon {
+            font-size: 36px;
+            margin-right: 5px;
+        }
 
-    </ul>
+        .quote-text {
+            font-style: italic;
+            font-size: 20px;
+        }
 
-    <h2>Second Semester</h2>
-    <ul>
+        .quote-author {
+            font-size: 18px;
+            margin-top: 10px;
+            display: block;
+        }
 
-        <li><a href="#analysis-ii" onclick="showContent('analysis-ii-content')">Analysis II</a>
-            <div id="analysis-ii-content" class="hidden">
-                <b>Instructor: Upendra Kulkarni</b>
-                <ul>
-                    <li>HW (with solutions)
-                        <ul>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1RpW71iBLQFOAD7EvSDiAXlBsxFryaBSc&export=download" target="_blank">HW 1</a> (<a href="https://drive.google.com/u/0/uc?id=1GflkXPjKGG18ivGmG7r4qU-Pm981McYv&export=download" target="_blank">Solutions</a>)</li>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1RyK4liyR63EkVZkHszV-kSTOHoNuQGUn&export=download" target="_blank">HW 2</a></li>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1pU2lfCfzwGC1yzX_6i1v-wNeje-p9Spq&export=download" target="_blank">HW 3</a></li>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1hIqOYSWU1HyljfrBhq87yYCFjQSm_2_c&export=download" target="_blank">HW 4</a></li>
-                            <li>HW 5</li>
-                        </ul>
-                    </li>
-                    <li>Quizzes
-                        <ul>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1kAqzRT4DLy_rhZsDZ9sFMp32aKd-yHTr&export=download" target="_blank">Quiz 1 (with answers)</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="https://drive.google.com/u/0/uc?id=1a71pm8KP7Yymq6rbIyq1R_Ff-Q99M5Ql&export=download" target="_blank">Midsem</a> (Solutions by TAs: <a href="https://drive.google.com/u/0/uc?id=1foMsF3omcMvps02eS-0KMEgPqtCznU1n&export=download" target="_blank">Q1</a> <a href="https://drive.google.com/u/0/uc?id=1yXbYoaqRCuPwmofrFz7kUYL_D46ZFvut&export=download" target="_blank">Q2</a> <a href="https://drive.google.com/u/0/uc?id=1r4EenUe369Cn0yb_oBLYaTJMPrFxMGwR&export=download" target="_blank">Q3</a> <a href="https://drive.google.com/u/0/uc?id=1qOPPG7RFck7G4CUDRVBXFfITkRj4ntqt&export=download" target="_blank">Q4</a>)</li>
-                    <li><a href="https://drive.google.com/u/0/uc?id=1OPbeQCNeK12X5LYe9_7nXmKGoVW2fTNo&export=download" target="_blank">Endsem</a></li>
-                </ul>
-            </div>
-        </li>
 
-        <li><a href="#algebra-ii" onclick="showContent('algebra-ii-content')">Algebra II</a>
-            <div id="algebra-ii-content" class="hidden">
-                <b>Instructor: V. Balaji</b>
-                <ul>
-                    <li><a href="https://drive.google.com/u/0/uc?id=15Hz0rMqLui_T713zJhMo851Jw8hxOQcX&export=download" target="blank">Midsem</a></li>
-                    <li><a href="https://drive.google.com/u/0/uc?id=15AdQv1BUixYsPA9g-LGc4rUB2TKAGF8U&export=download" target="blank">Endsem</a></li>
-                    <li><a href="https://drive.google.com/u/0/uc?id=1C_cMAhg95Og8zlj2TKc8qnAMoNl-w6NS&export=download" target="blank">My notes</a> [Incomplete]</li>
-                </ul>
-            </div>
-        </li>
+        section {
+            margin-bottom: 40px; /* Increase margin bottom for better separation */
+        }
 
-        <li><a href="#advanced-programming-in-python" onclick="showContent('advanced-programming-in-python-content')">Advanced Programming in Python</a>
-            <div id="advanced-programming-in-python-content" class="hidden">
-                <b>Instructor: Samir Datta</b>
-                <ul>
-                    <li>Assignments
-                        <ul>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1-hN_UWaCfz9nnvl3L2N_26taArSydXos&export=download" target="blank">Assigment 1</a></li>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1pcLgqMNjNWDw_61VfI6L-ec0ZugXzNVV&export=download" target="blank">Assigment 2</a></li>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1seytYKNJcFHw8pnPGhdrUlGWUZNUni7O&export=download" target="blank">Assigment 3</a></li>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1TAPhStUbvJDQqjodhl2eu78neBmRdWgw&export=download" target="blank">Assigment 4</a></li>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1FUseM2vGAUJHzyBWIMpkTaF0srUVjrvP&export=download" target="blank">Assigment 5</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="https://drive.google.com/u/0/uc?id=1bxRuHCW04XnaYWpCMYdbkBMPp7pop33x&export=download" target="blank">Endsem</a></li>
-                </ul>
-            </div>
-        </li>
+        section h3 {
+            font-size: 24px; /* Increase font size for section headings */
+            margin-bottom: 15px; /* Adjust margin bottom for spacing */
+        }
 
-        <li><a href="#discrete-math" onclick="showContent('discrete-math-content')">Discrete Mathematics</a>
-            <div id="discrete-math-content" class="hidden">
-                <b>Instructor: V. Arvind, A. Sinhababu</b>
-                <ul>
-                    <li>Assignments
-                        <ul>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1AScbytVJtL9APyB_qrwfNy_O-xyl2doC&export=download" target="blank">Assigment 1</a></li>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1xKeOrEwSbpJBvbNOqFaLOz-LrdrvCQMw&export=download" target="blank">Assigment 2</a></li>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1yaFvAhdtlaxWzKugUO_cInkNaeBvDqH1&export=download" target="blank">Assigment 3</a></li>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1fWh6GbWfokqj7DxDqBqQTH0_kUTGbXfz&export=download" target="blank">Assigment 4</a></li>
-                        </ul>
-                    </li>
-                    <li>Quiz 1
-                        <ul>
-                            <li>Quiz 1</li>
-                            <li><a href="https://drive.google.com/u/0/uc?id=1rtuYg7Tg0ykgDV41G5MwCEVIbvRPK5oA&export=download" target="blank">Quiz 2</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="https://drive.google.com/u/0/uc?id=1YRQCMLBaEWNYl6P4C_Fg6qH2Zcpsmtl1&export=download" target="blank">Midsem</a></li>
-                    <li><a href="https://drive.google.com/u/0/uc?id=1EFHbYxQG0nJcTnlFjpWB1jZnqnsyI1YA&export=download" target="blank">Endsem</a></li>
-                </ul>
-            </div>
-        </li>
-    
-        <li><a href="#probability" onclick="showContent('probability-content')">Probability</a>
-            <div id="probability-content" class="hidden">
-                <b>Instructor: B.V. Rao</b>
-                <ul>
-                    <li><a href="https://drive.google.com/u/0/uc?id=1sRHu8b7x3ZFknbGseqFFnq8n8q_S_U3a&export=download" target="blank">Notes</a>, <a href="https://drive.google.com/u/0/uc?id=16LC5kTb1AKpiEtDef0CSPkJR-Op5UHl2&export=download" target="blank">HA</a></li>
-                    <li><a href="https://drive.google.com/u/0/uc?id=1nueaEL7rV5i5zprBQmzXoSB7w0CEr2uY&export=download" target="blank">Midsem</a></li>
-                    <li><a href="https://drive.google.com/u/0/uc?id=1MYytuyDP6fqvPD_fUt1VbrsfZowyf24C&export=download" target="blank">Endsem</a></li>
-                </ul>
-            </div>
-        </li>
-    </ul>
+        section p {
+            font-size: 18px; /* Increase font size for paragraphs */
+            line-height: 1.6; /* Adjust line height for better readability */
+            margin-bottom: 20px; /* Adjust margin bottom for spacing */
+        }
 
-  </div>
+        section ul {
+            font-size: 18px; /* Increase font size for list items */
+            line-height: 1.6; /* Adjust line height for better readability */
+            margin-bottom: 20px; /* Adjust margin bottom for spacing */
+        }
 
-  <!-- JavaScript code -->
-  <script>
-    function toggleSidebar() {
-      var sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('show-sidebar');
-    }
+        section ul li {
+        margin-bottom: 5px; /* Adjust margin bottom for spacing between list items */
+        }
 
-    function showContent(id) {
-            var content = document.getElementById(id);
-            if (content.classList.contains('hidden')) {
-                content.classList.remove('hidden');
-            } else {
-                content.classList.add('hidden');
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
             }
         }
-  </script>
+
+        .display-4 {
+            animation: slideIn 1.5s ease forwards;
+        }
+
+        .dark a {
+            color: #ffffff !important; /* Set link color to white */
+        }
+
+        /* Additional styling for the image */
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .navbar-nav .nav-link[href="courses.html"] {
+            color: rgb(60, 60, 205) !important;
+        }
+
+        .dark .navbar-nav .nav-link[href="courses.html"] {
+            color: rgb(125, 125, 214) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+        <!-- Your website content goes here -->
+        <!-- Replace the following with your own navigation, header, and other content -->
+        <div>
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+                <div class="container">
+                    <!-- Your logo or brand image goes here -->
+                    <a class="navbar-brand">Nirjhar Nath</a>
+                    <!-- Toggle button for sidebar -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- Your navigation links for desktop view -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="me-auto navbar-nav">
+                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="courses.html">Courses</a>
+                            <a class="nav-link" href="misc.html">Miscellaneous</a>
+                            <a class="nav-link" href="shiny.html">Shiny Apps</a>
+                            <a class="nav-link" href="research.html">Research</a>
+                            <a class="nav-link" href="index.html#news">News</a>
+                            <a class="nav-link" href="index.html#contact">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Sidebar content -->
+            <div class="sidebar" id="sidebar">
+                <!-- Close button for sidebar -->
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <!-- Navigation links for mobile view -->
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a class="nav-link" href="misc.html">Miscellaneous</a>
+                <a href="shiny.html">Shiny Apps</a>
+                <a href="research.html">Research</a>
+                <a class="nav-link" href="index.html#news">News</a>
+                <a class="nav-link" href="index.html#contact">Contact</a>
+            </div>
+            <!-- Main content area -->
+            <div class="mt-5 mb-5 container">
+                <!-- Your main content goes here -->
+                <h1 class="display-4 text-center">Welcome to my Courses Section</h1>
+                <br>
+                <section>
+                <p>
+                I have added some files (which I could find) related to my coursework here at CMI, which might be useful. Some files might be missing because I have lost them. There may be errors in notes as well as assigment solutions.
+                </p>
+                </section>
+                <!-- First Semester -->
+                <section>
+                    <div class="container">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h3 class="text-center">First Semester</h3>
+                            </div>
+                            <div class="card-body">
+                                <!-- Linear Algebra -->
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                        <a href="#" class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#linearAlgebraCollapse" aria-expanded="true" aria-controls="linearAlgebraCollapse"><h5>Linear Algebra</h5></a>
+                                    </div>
+                                    <div class="collapse" id="linearAlgebraCollapse">
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <strong>Instructor:</strong> Upendra Kulkarni
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Assignments:</strong>
+                                                    <ul>
+                                                        <li><a href="https://combinoob.github.io/courses/alg1/hw1.pdf" target="_blank">HW1</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/alg1/hw2.pdf" target="_blank">HW2</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/alg1/hw3.pdf" target="_blank">HW3</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/alg1/hw4.pdf" target="_blank">HW4</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/alg1/hw5.pdf" target="_blank">HW5</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/alg1/hw6.pdf" target="_blank">HW6</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Quizzes:</strong>
+                                                    <ul>
+                                                        <li><a href="https://combinoob.github.io/courses/alg1/alg1_quiz1.pdf" target="_blank">Quiz 1</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/alg1/alg1_quiz2.pdf" target="_blank">Quiz 2</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/alg1/alg1_quiz3.pdf" target="_blank">Quiz 3</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/alg1/alg1_midsem.pdf" target="_blank">Midsem</a></strong></li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/alg1/alg1_endsem.pdf" target="_blank">Endsem</a></strong></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Real Analysis -->
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                        <a href="#" class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#realAnalysisCollapse" aria-expanded="true" aria-controls="realAnalysisCollapse"><h5>Analysis I</h5></a>
+                                    </div>
+                                    <div class="collapse" id="realAnalysisCollapse">
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <strong>Instructor:</strong> Krishna Hanumanthu
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Quizzes:</strong>
+                                                    <ul>
+                                                        <li><a href="https://combinoob.github.io/courses/ana1/quiz1.pdf" target="_blank">Quiz 1</a></li>
+                                                        <li>Quiz 2</li>
+                                                        <li>Quiz 3</li>
+                                                        <li>Quiz 4</li>
+                                                    </ul>
+                                                </li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/ana1/ana1_midsem.pdf" target="_blank">Midsem</a></strong></li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/alg1/ana1_endsem.pdf" target="_blank">Endsem</a></strong></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Haskell -->
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                        <a href="#" class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#haskell" aria-expanded="true" aria-controls="haskell"><h5>Haskell</h5></a>
+                                    </div>
+                                    <div class="collapse" id="haskell">
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <strong>Instructor:</strong> S.P. Suresh
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Assignments:</strong>
+                                                    <ul>
+                                                        <li><a href="https://combinoob.github.io/courses/haskell/assignment1.pdf" target="_blank">Assignment 1</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/haskell/assignment2.pdf" target="_blank">Assignment 2</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/haskell/assignment3.pdf" target="_blank">Assignment 3</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/haskell/haskell_midsem.pdf" target="_blank">Midsem</a></strong></li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/haskell/haskell_endsem.pdf" target="_blank">Endsem</a></strong></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Classical Mechanics -->
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                        <a href="#" class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#cm1" aria-expanded="true" aria-controls="cm1"><h5>Classical Mechanics</h5></a>
+                                    </div>
+                                    <div class="collapse" id="cm1">
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <strong>Instructor:</strong> Govind Krishnaswami
+                                                </li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/cm1/cm1_endsem.pdf" target="_blank">Endsem</a></strong></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- English -->
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                        <a href="#" class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#english" aria-expanded="true" aria-controls="english"><h5>English</h5></a>
+                                    </div>
+                                    <div class="collapse" id="english">
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <strong>Instructor:</strong> Usha Mahadevan
+                                                </li>
+                                                <li class="list-group-item"><strong>Midsem</strong></li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/english/english_endsem.pdf" target="_blank">Endsem</a></strong></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                <!-- Second Semester -->
+                <section>
+                    <div class="container">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h3 class="text-center">Second Semester</h3>
+                            </div>
+                            <div class="card-body">
+                                <!-- Calculus 1-->
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                        <a href="#" class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#calc1" aria-expanded="true" aria-controls="calc1"><h5>Calculus 1</h5></a>
+                                    </div>
+                                    <div class="collapse" id="calc1">
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <strong>Instructor:</strong> Upendra Kulkarni
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Assignments (with solutions):</strong>
+                                                    <ul>
+                                                        <li><a href="https://combinoob.github.io/courses/calc1/hw1.pdf" target="_blank">HW1 (Problems)</a> (<a href="https://combinoob.github.io/courses/calc1/ana2_hw1.pdf" target="_blank">Solutions</a>)</li>
+                                                        <li><a href="https://combinoob.github.io/courses/calc1/ana2_hw2.pdf" target="_blank">HW2</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/calc1/ana2_hw3.pdf" target="_blank">HW3</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/calc1/ana2_hw4.pdf" target="_blank">HW4</a></li>
+                                                        <li>HW5</li>
+                                                    </ul>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Quizzes:</strong>
+                                                    <ul>
+                                                        <li><a href="https://combinoob.github.io/courses/calc1/quiz1_answers.pdf" target="_blank">Quiz 1 (with answers)</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/calc1/ana2_midsem.pdf" target="_blank">Midsem</a></strong> Solutions by TAs: (<a href="https://combinoob.github.io/courses/calc1/Q1.pdf" target="_blank">Q1</a>, <a href="https://combinoob.github.io/courses/calc1/Q2.pdf" target="_blank">Q2</a>, <a href="https://combinoob.github.io/courses/calc1/Q3.pdf" target="_blank">Q3</a>, <a href="https://combinoob.github.io/courses/calc1/Q4.pdf" target="_blank">Q4</a>)</li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/calc1/ana2_endsem.pdf" target="_blank">Endsem</a></strong></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Group Theory -->
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                        <a href="#" class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#alg2" aria-expanded="true" aria-controls="alg2"><h5>Group Theory</h5></a>
+                                    </div>
+                                    <div class="collapse" id="alg2">
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <strong>Instructor:</strong> V. Balaji
+                                                </li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/alg2/alg2_midsem.pdf" target="_blank">Midsem</a></strong></li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/alg2/alg2_endsem.pdf" target="_blank">Endsem</a></strong></li>
+                                                <li class="list-group-item"><a href="https://combinoob.github.io/courses/alg2/group_theory.pdf" target="_blank">My notes</a> [Incomplete]</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- APRG -->
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                        <a href="#" class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#aprg" aria-expanded="true" aria-controls="aprg"><h5>Advanced Programming</h5></a>
+                                    </div>
+                                    <div class="collapse" id="aprg">
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <strong>Instructor:</strong> Samir Datta
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Assignments:</strong>
+                                                    <ul>
+                                                        <li><a href="https://combinoob.github.io/courses/aprg/assign1.pdf" target="_blank">Assignment 1</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/aprg/assign2.pdf" target="_blank">Assignment 2</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/aprg/assign3.pdf" target="_blank">Assignment 3</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/aprg/assign4.pdf" target="_blank">Assignment 4</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/aprg/assign5.pdf" target="_blank">Assignment 5</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/aprg/aprg_endsem.pdf" target="_blank">Endsem</a></strong></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- DMAT -->
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                        <a href="#" class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#dmat" aria-expanded="dmat" aria-controls="calc1"><h5>Discrete Mathematics</h5></a>
+                                    </div>
+                                    <div class="collapse" id="dmat">
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <strong>Instructor:</strong> V. Arvind
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Assignments:</strong>
+                                                    <ul>
+                                                        <li><a href="https://combinoob.github.io/courses/dmat/assign1.pdf" target="_blank">Assigment 1</a> (<a href="https://combinoob.github.io/courses/dmat/sol1.pdf" target="_blank">Solutions</a>)</li>
+                                                        <li><a href="https://combinoob.github.io/courses/dmat/assign2.pdf" target="_blank">Assigment 2</a> (<a href="https://combinoob.github.io/courses/dmat/sol2.pdf" target="_blank">Solutions</a>)</li>
+                                                        <li><a href="https://combinoob.github.io/courses/dmat/assign3.pdf" target="_blank">Assigment 3</a> (<a href="https://combinoob.github.io/courses/dmat/sol3.pdf" target="_blank">Solutions</a>)</li>
+                                                        <li><a href="https://combinoob.github.io/courses/dmat/assign4.pdf" target="_blank">Assigment 4</a> (<a href="https://combinoob.github.io/courses/dmat/sol4.pdf" target="_blank">Solutions</a>)</li>
+                                                    </ul>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Quizzes:</strong>
+                                                    <ul>
+                                                        <li>Quiz 1</li>
+                                                        <li><a href="https://combinoob.github.io/courses/dmat/dmat_quiz2.pdf" target="_blank">Quiz 2</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/dmat/dmat_midsem.pdf" target="_blank">Midsem</a></strong></li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/dmat/dmat_endsem.pdf" target="_blank">Endsem</a></strong></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Probability -->
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                        <a href="#" class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#probability" aria-expanded="true" aria-controls="probability"><h5>Probability</h5></a>
+                                    </div>
+                                    <div class="collapse" id="probability">
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <strong>Instructor:</strong> B.V. Rao
+                                                </li>
+                                                <li class="list-group-item"><a href="https://combinoob.github.io/courses/probability/2023ProbHA.pdf" target="_blank">HA</a>, <a href="https://combinoob.github.io/courses/probability/2023Probnotes13.pdf" target="_blank">Notes</a></li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/probability/prob_midsem.pdf" target="_blank">Midsem</a></strong></li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/probability/prob_endsem.pdf" target="_blank">Endsem</a></strong></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Third Semester -->
+                <section>
+                    <div class="container">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h3 class="text-center">Third Semester</h3>
+                            </div>
+                            <div class="card-body">
+                                <!-- Ring Theory -->
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                        <a href="#" class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#alg3" aria-expanded="true" aria-controls="alg3"><h5>Ring Theory</h5></a>
+                                    </div>
+                                    <div class="collapse" id="alg3">
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <strong>Instructor:</strong> Krishna Hanumanthu
+                                                </li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/alg3/alg3_midsem.pdf" target="_blank">Midsem</a></strong></li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/alg3/alg3_endsem.pdf" target="_blank">Endsem</a></strong></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Analysis II -->
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                        <a href="#" class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#ana2" aria-expanded="true" aria-controls="ana2"><h5>Analysis II</h5></a>
+                                    </div>
+                                    <div class="collapse" id="ana2">
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <strong>Instructor:</strong> R. Srinivasan
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Assignments:</strong>
+                                                    <ul>
+                                                        <li><a href="https://combinoob.github.io/courses/ana2/ana2_assign1.pdf" target="_blank">Assignment 1</a> (<a href="https://combinoob.github.io/courses/ana2/sol_assign1.pdf" target="_blank">Solutions</a>)</li>
+                                                        <li><a href="https://combinoob.github.io/courses/ana2/ana2_assign2.pdf" target="_blank">Assignment 2</a> (<a href="https://combinoob.github.io/courses/ana2/sol_assign2.pdf" target="_blank">Solutions</a>)</li>
+                                                    </ul>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Quizzes:</strong>
+                                                    <ul>
+                                                        <li><a href="https://combinoob.github.io/courses/ana2/ana2_quiz1.pdf" target="_blank">Quiz 1</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/ana2/ana2_quiz2.pdf" target="_blank">Quiz 2</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/ana2/ana2_quiz3.pdf" target="_blank">Quiz 3</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/ana2/ana2_quiz4.pdf" target="_blank">Quiz 4</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/ana1/ana1_midsem.pdf" target="_blank">Midsem</a></strong></li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/alg1/ana1_endsem.pdf" target="_blank">Endsem</a></strong> (<a href="https://combinoob.github.io/courses/ana2/sol_endsem.pdf" target="_blank">Some solutions</a>)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Calculus II -->
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                        <a href="#" class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#calc2" aria-expanded="true" aria-controls="calc2"><h5>Calculus II</h5></a>
+                                    </div>
+                                    <div class="collapse" id="calc2">
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <strong>Instructor:</strong> Sukhendu Mehrotra
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Quizzes:</strong>
+                                                    <ul>
+                                                        <li><a href="https://combinoob.github.io/courses/calc2/calc_quiz1.pdf" target="_blank">Quiz 1</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/calc2/calc_quiz2.pdf" target="_blank">Quiz 2</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/calc2/calc_quiz3.pdf" target="_blank">Quiz 3</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/calc2/calc_quiz4.pdf" target="_blank">Quiz 4</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/calc2/calc_quiz5.pdf" target="_blank">Quiz 5</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/calc2/calc_quiz6.pdf" target="_blank">Quiz 6</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/calc2/calc_quiz7.pdf" target="_blank">Quiz 7</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/calc2/calc_quiz8.pdf" target="_blank">Quiz 8</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/calc2/calc_midsem.pdf" target="_blank">Midsem</a></strong></li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/calc2/calc_endsem.pdf" target="_blank">Endsem</a></strong></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- TOC -->
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                        <a href="#" class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#toc" aria-expanded="true" aria-controls="toc"><h5>Theory of Computation</h5></a>
+                                    </div>
+                                    <div class="collapse" id="toc">
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <strong>Instructor:</strong> V. Arvind
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Assignments:</strong>
+                                                    <ul>
+                                                        <li><a href="https://combinoob.github.io/courses/toc/assign1.pdf" target="_blank">Assigment 1</a> (<a href="https://combinoob.github.io/courses/toc/sol_assign1.pdf" target="_blank">Solutions</a>)</li>
+                                                        <li><a href="https://combinoob.github.io/courses/toc/assign2.pdf" target="_blank">Assigment 2</a> (<a href="https://combinoob.github.io/courses/toc/sol_assign2.pdf" target="_blank">Solutions</a>)</li>
+                                                        <li><a href="https://combinoob.github.io/courses/toc/assign3.pdf" target="_blank">Assigment 3</a> (<a href="https://combinoob.github.io/courses/toc/sol_assign3.pdf" target="_blank">Solutions</a>)</li>
+                                                        <li><a href="https://combinoob.github.io/courses/toc/assign4.pdf" target="_blank">Assigment 4</a> (<a href="https://combinoob.github.io/courses/toc/sol_assign4.pdf" target="_blank">Solutions</a>)</li>
+                                                    </ul>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Quizzes:</strong>
+                                                    <ul>
+                                                        <li><a href="https://combinoob.github.io/courses/toc/toc_quiz1.pdf" target="_blank">Quiz 1</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/toc/toc_quiz2.pdf" target="_blank">Quiz 2</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/toc/toc_endsem.pdf" target="_blank">Midsem</a></strong></li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/toc/toc_endsem.pdf" target="_blank">Endsem</a></strong></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Design and Analysis of Algorithms -->
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                        <a href="#" class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#algo" aria-expanded="true" aria-controls="algo"><h5>Design and Analysis of Algorithms</h5></a>
+                                    </div>
+                                    <div class="collapse" id="algo">
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item">
+                                                    <strong>Instructor:</strong> G. Philip
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Practice Problems:</strong>
+                                                    <ul>
+                                                        <li><a href="https://combinoob.github.io/courses/algo/practice_questions_set1.pdf" target="_blank">Set 1</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/algo/practice_questions_set2.pdf" target="_blank">Set 2</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/algo/practice_questions_set3.pdf" target="_blank">Set 3</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/algo/practice_questions_set4.pdf" target="_blank">Set 4</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/algo/practice_questions_set5.pdf" target="_blank">Set 5</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/algo/practice_questions_set6.pdf" target="_blank">Set 6</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/algo/practice_questions_set7.pdf" target="_blank">Set 7</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/algo/practice_questions_set8.pdf" target="_blank">Set 8</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="list-group-item">
+                                                    <strong>Quizzes:</strong>
+                                                    <ul>
+                                                        <li><a href="https://combinoob.github.io/courses/algo/algo_quiz1.pdf" target="_blank">Quiz 1</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/algo/algo_quiz2.pdf" target="_blank">Quiz 2</a></li>
+                                                        <li><a href="https://combinoob.github.io/courses/algo/algo_quiz3.pdf" target="_blank">Quiz 3</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/algo/algo_endsem.pdf" target="_blank">Midsem</a></strong></li>
+                                                <li class="list-group-item"><strong><a href="https://combinoob.github.io/courses/algo/algo_endsem.pdf" target="_blank">Endsem</a></strong></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- Your footer content goes here -->
+    <footer class="footer">
+        <div class="container text-center">
+            <span class="text-muted">&copy; Nirjhar Nath</span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript bundle (including Popper) -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript for sidebar toggle -->
+    <script>
+        function openNav() {
+            document.getElementById("sidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("sidebar").style.width = "0";
+        }
+
+        // Function to toggle between dark and light mode
+        function toggleMode() {
+            const htmlElement = document.documentElement;
+            htmlElement.classList.toggle('dark');
+            const toggleButton = document.getElementById('toggleButton');
+            if (htmlElement.classList.contains('dark')) {
+                toggleButton.textContent = '☀️';
+            } else {
+                toggleButton.textContent = '🌙';
+            }
+        }
+    </script>
+
+    <!-- Button for toggling dark/light mode -->
+    <button id="toggleButton" class="toggle-mode" onclick="toggleMode()">☀️</button>
+</body>
+
 </html>
