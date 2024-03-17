@@ -1,244 +1,345 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="dark">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Nirjhar Nath</title>
-  <style>
-    /* CSS styles */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      font-size: 18px;
-      letter-spacing: 0.5px;
-    }
-    
-    header {
-      background-color: #060039;
-      color: #fff;
-      padding: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      width: 100%;
-    }
-    
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      margin: 0 auto;
-      text-align: center;
-    }
-    
-    .nav-toggle {
-      position: absolute;
-      top: 4px;
-      right: -50px;
-      display: block;
-      cursor: pointer;
-      padding: 10px;
-    }
-    
-    .nav-toggle span {
-      display: block;
-      width: 25px;
-      height: 3px;
-      background-color: #fff;
-      margin-bottom: 5px;
-      transition: transform 0.3s ease-in-out;
-    }
-    
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 185px;
-      height: 100vh;
-      background-color: #060039;
-      color: #fff;
-      padding: 20px;
-      transform: translateX(-220px);
-      transition: transform 0.3s ease-in-out;
-    }
-    
-    .show-sidebar {
-      transform: translateX(0);
-    }
-    
-    .nav-menu {
-        list-style-type:none; 
-        margin-top:30px; 
-        padding-left:-20px; 
-        font-size:x-large;
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-        font-weight:bold; 
-        text-align:center; 
-        text-decoration:none; 
-        color:white; 
-        text-shadow:black -1px -1px, black -1px -1px, black -1px -1px, black -1px -1px
-    }
-    
-    .nav-menu li {
-      margin-bottom: 10px;
-    }
-    
-    .nav-menu li a {
-        color:white; 
-        text-decoration:none; 
-        font-size:x-large; 
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-        font-weight:bold; 
-        display:block; 
-        padding-top:-10px
-    }
-    
-    .nav-menu li a:hover {
-      color: #ccc;
-    }
+    <!-- Your Google Analytics script or any other tracking script can go here -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Your personal description goes here">
 
-    .content {
-      max-width: 750px;
-      margin: 80px auto 20px;
-      padding: 0 20px;
-    }
-    
-    h2 {
-      font-size: 24px;
-      font-weight: bold;
-      margin-top: 30px;
-    }
+    <link rel="icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="search" type="application/opensearchdescription+xml" title="Nirjhar Nath" href="/opensearch.xml">
 
-    h3 {
-      font-size: 20px;
-      font-weight: bold;
-      margin-top: 20px;
-    }
-    
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-      margin-top: 10px;
-    }
-    
-    li {
-      margin-bottom: 5px;
-    }
-    
-    a {
-      color: #333;
-    }
-    
-    .sidebar.show-sidebar .nav-toggle span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    
-    .sidebar.show-sidebar .nav-toggle span:nth-child(2) {
-      opacity: 0;
-    }
-    
-    .sidebar.show-sidebar .nav-toggle span:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px);
-    }
+    <!-- Include MathJax-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-    /* Media queries */
-    @media screen and (max-width: 600px) {
-      .sidebar {
-        width: 100%;
-        height: auto;
-        padding: 20px;
-        transform: translateX(0);
-        z-index: 1;
-      }
-    
-      .nav-toggle {
-        display: none;
-      }
-    }
-  </style>
-  </style>
-  <script type="text/javascript">
-  MathJax = {
-    tex: {
-      inlineMath: [
-        ['$', '$']
-      ],
-      displayMath: [
-        ['\\[', '\\]']
-      ],
-    }
-  };
-</script>
-<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
+    <!-- Customize the color scheme if needed -->
+    <meta name="color-scheme" content="light dark">
+    <!-- Update the Bootstrap link if you prefer a different theme -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightshade.min.css"
+        rel="stylesheet">
+    <script type="module" crossorigin="" src="/assets/index-e210c696.js"></script>
+    <link rel="stylesheet" href="/assets/index-efbf9d7d.css">
+    <title>Nirjhar Nath</title>
+
+
+    <style>
+        /* Add custom styles for the sidebar */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidebar .close-btn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        /* Styles for the toggle button */
+        .toggle-mode {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 5);
+        }
+
+        /* Add styling for the quote */
+        .quote {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .quote-icon {
+            font-size: 36px;
+            margin-right: 5px;
+        }
+
+        .quote-text {
+            font-style: italic;
+            font-size: 20px;
+        }
+
+        .quote-author {
+            font-size: 18px;
+            margin-top: 10px;
+            display: block;
+        }
+
+
+        section {
+            margin-bottom: 40px; /* Increase margin bottom for better separation */
+        }
+
+        section h3 {
+            font-size: 24px; /* Increase font size for section headings */
+            margin-bottom: 15px; /* Adjust margin bottom for spacing */
+        }
+
+        section p {
+            font-size: 18px; /* Increase font size for paragraphs */
+            line-height: 1.6; /* Adjust line height for better readability */
+            margin-bottom: 20px; /* Adjust margin bottom for spacing */
+        }
+
+        section ul {
+            font-size: 18px; /* Increase font size for list items */
+            line-height: 1.6; /* Adjust line height for better readability */
+            margin-bottom: 20px; /* Adjust margin bottom for spacing */
+        }
+
+        section ul li {
+        margin-bottom: 5px; /* Adjust margin bottom for spacing between list items */
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .display-4 {
+            animation: slideIn 1.5s ease forwards;
+        }
+
+        .dark a {
+            color: #ffffff !important; /* Set link color to white */
+        }
+
+        /* Additional styling for the image */
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .navbar-nav .nav-link[href="index.html"] {
+            color: rgb(60, 60, 205) !important;
+        }
+
+        .dark .navbar-nav .nav-link[href="index.html"] {
+            color: rgb(125, 125, 214) !important;
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <div class="logo">Nirjhar Nath &bull; নির্ঝর নাথ</div>
-  </header>
-
-  <div class="sidebar" id="sidebar">
-    <div class="nav-toggle" onclick="toggleSidebar()">
-      <span></span>
-      <span></span>
-      <span></span>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+        <!-- Your website content goes here -->
+        <!-- Replace the following with your own navigation, header, and other content -->
+        <div>
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+                <div class="container">
+                    <!-- Your logo or brand image goes here -->
+                    <a class="navbar-brand">Nirjhar Nath</a>
+                    <!-- Toggle button for sidebar -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- Your navigation links for desktop view -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="me-auto navbar-nav">
+                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="courses.html">Courses</a>
+                            <a class="nav-link" href="misc.html">Miscellaneous</a>
+                            <a class="nav-link" href="shiny.html">Shiny Apps</a>
+                            <a class="nav-link" href="research.html">Research</a>
+                            <a class="nav-link" href="index.html#news">News</a>
+                            <a class="nav-link" href="index.html#contact">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Sidebar content -->
+            <div class="sidebar" id="sidebar">
+                <!-- Close button for sidebar -->
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <!-- Navigation links for mobile view -->
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="misc.html">Miscellaneous</a>
+                <a href="shiny.html">Shiny Apps</a>
+                <a href="research.html">Research</a>
+                <a href="index.html#news">News</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <!-- Main content area -->
+            <div class="mt-5 mb-5 container">
+                <!-- Your main content goes here -->
+                <h1 class="display-4 text-center">Welcome to my Homepage</h1>
+                <!-- Include your picture -->
+                <div class="text-center">
+                    <img src="https://combinoob.github.io/images/profile_pic.jpg" alt="Your Picture" class="profile-pic">
+                </div>
+                <p class="quote">
+                  <span class="quote-icon">❝</span>
+                  <span class="quote-text">In mathematics, you never understand things; you just get used to them.</span>
+                  <span class="quote-icon">❞</span>
+                  <span class="quote-author">— John Von Newmann</span>
+                </p>
+              
+                <!-- About Me Section -->
+                <section>
+                    <h3>About Me</h3>
+                    <p>
+                      I am Nirjhar Nath and I hail from Silchar, Assam. I am a philomath and a passionate problem solver. I am currently engrossed in my undergraduate studies, pursuing a dual major in mathematics and computer science at the Chennai Mathematical Institute, a research institute based in Chennai, India. (Check out my <a href="courses.html">Courses</a> section.) I have also done some amount of olympiad math in high school.
+                    </p>
+                    <p>
+                      I am interested in varied areas of computer science, data science, mathematics and statistics. My current research interests lie in  machine learning (both theory and applied), big data, computer vision, computational biology and time series analysis. I am currently engaged in developing algorithms aimed at enhancing the diagnosis and prognosis of breast cancer through the analysis of digitized images obtained from fine needle aspirates (FNAs) of breast masses.
+                    </p>
+                    <p>
+                      Beyond academics, I spend my free time writing codes and typesetting in \( \mathrm{\LaTeX} \). I also love playing chess, reading non-fiction, writing poems (in English and Bengali) and listening to music, particularly rabindrasangeet, modern bengali songs (<span style = "font-size: smaller;">আধুনিক বাংলা গান</span>) and rock/metal.
+                    </p>
+                    <p>
+                        I have written some handouts for students beginning with math olympiads. They are available below.
+                    </p>
+                </section>
+                <!-- Handouts Section -->
+                <section>
+                    <h3>Handouts</h3>
+                    <ul>
+                        <li>
+                            Divisibility in Olympiad Number Theory (<a href="https://combinoob.github.io/handouts/divisibility.pdf" target="_blank">Download</a>)
+                        </li>
+                        <li>
+                            The Extremal Principle (<a href="https://aamonline.org.in/ganit-bikash/gb/volume-74/8-Extremal-Principle-Nirjhar-Nath-Ganit-Bikash.pdf" target="_blank">Download</a>) published by Ganit Bikash
+                        </li>
+                        <li>
+                            Some Problems on Parity (<a href="https://aamonline.org.in/ganit-bikash/gb/volume-71/17-Some-Problems-on-Parity-Nirjhar-Nath.pdf" target="_blank">Download</a>) published by Ganit Bikash
+                        </li>
+                        <li>
+                            Fermat's Theorem and its Consequences (<a href="https://combinoob.github.io/handouts/fermat.pdf" target="_blank">Download</a>). [Incomplete]
+                        </li>
+                    </ul>
+                </section>
+                <!-- Contact Me Section -->
+                <section>
+                    <h3 id="contact">Contact Me</h3>
+                    <p>You can contact me via my email id; I keep on checking emails frequently, so it is better to contact me via email. You can also contact me via my LinkedIn profile.</p>
+                    <ul>
+                      <li>
+                        Email: <a href="mailto:nirjhar@cmi.ac.in">nirjhar@cmi.ac.in</a>
+                      </li>
+                      <li>
+                        LinkedIn: <a href="https://www.linkedin.com/in/nirjhar-nath/">Nirjhar Nath</a>
+                      </li>
+                      <li>
+                        GitHub: <a href="https://github.com/combinoob/">combinoob</a>
+                      </li>
+                    </ul>
+                </section>
+                <!-- News Section -->
+                <section>
+                    <h3 id="news">News</h3>
+                    <ul>
+                        <li>
+                            <strong>[Feb 2024]</strong> Our paper on forest fire detection (<a href="https://doi.org/10.4236/ijcns.2024.172002">https://doi.org/10.4236/ijcns.2024.172002</a>) has been published.
+                        </li>
+                        <li>
+                            <strong>[Jan 2024]</strong> Our paper (<a href="https://arxiv.org/abs/2401.12924">https://arxiv.org/abs/2401.12924</a>) has been accepted for publication in Int. J. of Communications, Network and System Sciences of Scientific Research Publishing.
+                        </li>
+                    </ul>
+                </section>
+                <!-- About this site section -->
+                <section>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h3 class="card-title text-center mb-4">About This Site</h3>
+                                        <p class="card-text">
+                                            This website was crafted by me using HTML, CSS, and JavaScript. I have used the <code>MathJax-script</code> from <code>tex-mml-chtml.js</code> file available at <span style="font-size: smaller;"><a href="https://cdn.jsdelivr.net/npm/mathjax@3/es5/">https://cdn.jsdelivr.net/npm/mathjax@3/es5/</a></span> and some js and css styles from <code>bootstrap.bundle.min.js</code> available at <span style="font-size: smaller;"><a href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/">https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/</a></span> and <code>bootstrap-nightshade.min.css</code> available at <span style="font-size: smaller;"><a href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/">https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/</a></span> respectively. You are free to use this site's source code, after having a read of <a href="misc.html#use_site">this</a>.
+                                        </p>
+                                        <p class="card-text text-muted text-center"><em>Feel free to explore and discover!</em></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
     </div>
-    <ul class="nav-menu">
-      <li><a href="home.html">Home</a></li>
-      <li><a href="courses.html">Courses</a></li>
-      <li><a href="hobbies.html">Hobbies</a></li>
-      <li><a href="https://mathematical-discussions.blogspot.com/">Blog</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="shiny.html">Shiny Apps</a></li>
-      <li><a href="research.html">Research</a></li>
-    </ul>
-  </div>
+    <!-- Your footer content goes here -->
+    <footer class="footer">
+        <div class="container text-center">
+            <span class="text-muted">&copy; Nirjhar Nath</span>
+        </div>
+    </footer>
 
-  <div class="content">
-    <img src="https://i.postimg.cc/BvTDDghM/IMG-20230416-123515.jpg" alt="Profile Picture" style="width: 200px; border-radius: 50%; margin: 0 auto; display: block;">
-    
-    <h2>ABOUT ME</h2>
-    <p>I'm Nirjhar Nath and I hail from Silchar, Assam. I'm a philomath and a passionate problem solver. I am currently engrossed in my undergraduate studies, pursuing a dual major in mathematics and computer science at the <a href="https://www.cmi.ac.in/" target="_blank">Chennai Mathematical Institute</a>, a research institute based in Chennai, India. (Check out my <a href="courses.html">Courses</a> section.) I've also done some amount of olympiad math in high school.</p>
-    <p>Beyond academics, I love to write in both Bengali and English. I also love listening to music, particularly rabindrasangeet, modern bengali songs (adhunik bangla gaan) and rock/metal. (Check out my <a href="hobbies.html">Hobbies</a> section.)</p>
+    <!-- Bootstrap JavaScript bundle (including Popper) -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript for sidebar toggle -->
+    <script>
+        function openNav() {
+            document.getElementById("sidebar").style.width = "250px";
+        }
 
-    <h3>PROJECTS/ INTERNSHIPS</h3>
-    <ul>
-      <li>[May-July 2023] Used statistical models and machine learning to make predictions on the optimal fertility rate of India. Created a shiny app entirely based on R statistical software that predicts the population of India based on the available data on migration rate, death rate, fertility rate and population of India, and also calculates the optimal fertility rate given a target population in the future for India. The application is available at: <a href="https://palash.shinyapps.io/Fertility_rate/" target="_blank">https://palash.shinyapps.io/Fertility_rate/</a>. My advisor was <a href="https://sites.google.com/site/palashghoshstat/home" target="_blank">Dr. Palash Ghosh</a> of IIT Guwahati.</li>
-      <li>[November-December 2022] Project titled Continued fractions and Pell's equation, under <a href="https://www.iitg.ac.in/rupam/" target="_blank">Dr. Rupam Barman</a> of IIT Guwahati. The project notes can be accessed <a href="https://github.com/combinoob/Continued-fractions-and-Pell-s-equation/raw/main/cfpe.pdf" target="_blank">here</a>.</li>
-    </ul>
+        function closeNav() {
+            document.getElementById("sidebar").style.width = "0";
+        }
 
-    <h3>HANDOUTS</h3>
-    <p>I have written some handouts for students beginning with math olympiad preparation. I have put them below.</p>
-    <ul>
-      <li>Divisibility in Olympiad Number Theory <a href="https://drive.google.com/u/0/uc?id=1XVjq3BP91VA3ainZBv1vMkZ_hoByluAd&export=download" target="_blank">(Download)</a></li>
-      <li>The Extremal Principle <a href="https://aamonline.org.in/ganit-bikash/gb/volume-74/8-Extremal-Principle-Nirjhar-Nath-Ganit-Bikash.pdf" target="_blank">(Download)</a> published by <a href="https://aamonline.org.in/ganit-bikash/" target="_blank">Ganit Bikash</a></li>
-      <li>Some Problems on Parity <a href="https://aamonline.org.in/ganit-bikash/gb/volume-71/17-Some-Problems-on-Parity-Nirjhar-Nath.pdf" target="_blank">(Download)</a> published by <a href="https://aamonline.org.in/ganit-bikash/" target="_blank">Ganit Bikash</a></li>
-      <li>Fermat's Theorem and its Consequences <a href="https://drive.google.com/u/0/uc?id=1ghitWSXmTyUSDkC1uCdKurMpoPwaocMi&export=download" target="_blank">(Download)</a>. [Incomplete]</li>
-    </ul>
+        // Function to toggle between dark and light mode
+        function toggleMode() {
+            const htmlElement = document.documentElement;
+            htmlElement.classList.toggle('dark');
+            const toggleButton = document.getElementById('toggleButton');
+            if (htmlElement.classList.contains('dark')) {
+                toggleButton.textContent = '☀️';
+            } else {
+                toggleButton.textContent = '🌙';
+            }
+        }
+    </script>
 
-    <h2 id="contact">CONTACT ME</h2>
-    You can contact me via my email id; I keep on checking emails frequently, so it is better to contact me via email. You can also contact me via my LinkedIn profile.
-    <p></p>
-    <li>Email: <a href="mailto:nirjhar@cmi.ac.in">nirjhar@cmi.ac.in</a></li>
-    <li>LinkedIn: <a href="https://www.linkedin.com/in/nirjhar-nath-b4482a1b6" target="_blank">Nirjhar Nath</a></li>
-    <li>GitHub: <a href="https://github.com/combinoob" target="_blank">combinoob</a></li>
-
-    <h2 id="news">NEWS</h2>
-    <li>[Jan 2024] Our paper (<a href="https://arxiv.org/abs/2401.12924">https://arxiv.org/abs/2401.12924</a>) has been accepted for publication in <a href="https://www.scirp.org/journal/IJCNS/" target="_blank">Int. J. of Communications, Network and System Sciences</a> of <a href="https://www.scirp.org/" target="_blank">Scientific Research Publishing</a>.</li>
-    <li>[July 2023] I have successfully completed my summer internship.</li>
-  </div>
-  <h5>
-    <span style="display: block; text-align: center;">© Nirjhar Nath</span>
-  </h5>
-
-  <!-- JavaScript code -->
-  <script>
-    function toggleSidebar() {
-      var sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('show-sidebar');
-    }
-  </script>
+    <!-- Button for toggling dark/light mode -->
+    <button id="toggleButton" class="toggle-mode" onclick="toggleMode()">☀️</button>
 </body>
+
 </html>
