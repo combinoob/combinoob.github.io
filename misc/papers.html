@@ -7,10 +7,17 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #343a40;
             margin: 0;
             padding: 20px;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        body.light-mode {
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        body.dark-mode {
+            background-color: #343a40;
+            color: #f8f9fa;
         }
         h1 {
             text-align: center;
@@ -23,6 +30,10 @@
             background-color: #ffffff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            transition: background-color 0.5s;
+        }
+        body.dark-mode .container {
+            background-color: #495057;
         }
         .paper-list {
             list-style-type: none;
@@ -38,9 +49,35 @@
         .paper-list a:hover {
             text-decoration: underline;
         }
+        .toggle-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .toggle-button:hover {
+            background-color: #0056b3;
+        }
+        .return-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .return-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
-<body>
+<body class="light-mode">
     <h1>Past Papers</h1>
     <div class="container">
         <ul class="paper-list">
@@ -48,6 +85,15 @@
             <li><a href="https://combinoob.github.io/misc/PAPDmathquiz_2022.pdf" target="_blank">Pi Approximation Day 2022</a></li>
             <li><a href="https://combinoob.github.io/misc/PAPDmathquiz_2023.pdf" target="_blank">Pi Approximation Day 2023</a></li>
         </ul>
+        <button class="toggle-button" onclick="toggleTheme()">Toggle Light/Dark Mode</button>
+        <a class="return-link" href="https://combinoob.github.io/" target="_blank">Return to combinoob.github.io</a>
     </div>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
+        }
+    </script>
 </body>
 </html>
