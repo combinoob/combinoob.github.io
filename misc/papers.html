@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Past Papers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-6bSRYbQ3P9L59aAlK4Hpe7uyTAUqO+kU9S3pI6jc4wrMj5T9qupLa5aNEH+7lKPqik+1r4Lf1a9d5+N8+8fZKw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 20px;
             transition: background-color 0.5s, color 0.5s;
@@ -22,14 +23,15 @@
         h1 {
             text-align: center;
             color: #007bff;
+            margin-bottom: 30px;
         }
         .container {
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
             background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
             transition: background-color 0.5s;
         }
         body.dark-mode .container {
@@ -40,30 +42,32 @@
             padding: 0;
         }
         .paper-list li {
-            margin: 10px 0;
+            margin: 15px 0;
         }
         .paper-list a {
             text-decoration: none;
             color: #007bff;
+            font-size: 18px;
         }
         .paper-list a:hover {
             text-decoration: underline;
         }
-        .toggle-button {
-            display: block;
-            width: 100%;
-            text-align: center;
+        .theme-toggle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin: 20px 0;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
         }
-        .toggle-button:hover {
-            background-color: #0056b3;
+        .theme-toggle button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #007bff;
+            transition: color 0.3s;
+        }
+        .theme-toggle button:hover {
+            color: #0056b3;
         }
         .return-link {
             display: block;
@@ -71,6 +75,7 @@
             margin-top: 20px;
             color: #007bff;
             text-decoration: none;
+            font-size: 18px;
         }
         .return-link:hover {
             text-decoration: underline;
@@ -85,7 +90,11 @@
             <li><a href="https://combinoob.github.io/misc/PAPDmathquiz_2022.pdf" target="_blank">Pi Approximation Day 2022</a></li>
             <li><a href="https://combinoob.github.io/misc/PAPDmathquiz_2023.pdf" target="_blank">Pi Approximation Day 2023</a></li>
         </ul>
-        <button class="toggle-button" onclick="toggleTheme()">Toggle Light/Dark Mode</button>
+        <div class="theme-toggle">
+            <button onclick="toggleTheme()">
+                <i id="theme-icon" class="fas fa-moon"></i>
+            </button>
+        </div>
         <a class="return-link" href="https://combinoob.github.io/" target="_blank">Return to combinoob.github.io</a>
     </div>
     <script>
@@ -93,6 +102,14 @@
             const body = document.body;
             body.classList.toggle('dark-mode');
             body.classList.toggle('light-mode');
+            const icon = document.getElementById('theme-icon');
+            if (body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
         }
     </script>
 </body>
