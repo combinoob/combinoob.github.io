@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Past Papers</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-6bSRYbQ3P9L59aAlK4Hpe7uyTAUqO+kU9S3pI6jc4wrMj5T9qupLa5aNEH+7lKPqik+1r4Lf1a9d5+N8+8fZKw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -92,7 +91,7 @@
         </ul>
         <div class="theme-toggle">
             <button onclick="toggleTheme()">
-                <i id="theme-icon" class="fas fa-moon"></i>
+                <span id="theme-icon">🌙</span>
             </button>
         </div>
         <a class="return-link" href="https://combinoob.github.io/" target="_blank">Return to combinoob.github.io</a>
@@ -104,11 +103,9 @@
             body.classList.toggle('light-mode');
             const icon = document.getElementById('theme-icon');
             if (body.classList.contains('dark-mode')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
+                icon.textContent = '☀️';
             } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
+                icon.textContent = '🌙';
             }
         }
     </script>
