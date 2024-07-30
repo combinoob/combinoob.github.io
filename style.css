@@ -125,11 +125,3 @@
             margin: 20px auto;
             display: block;
         }
-
-        .navbar-nav .nav-link[href="index.html"] {
-            color: rgb(60, 60, 205) !important;
-        }
-
-        .dark .navbar-nav .nav-link[href="index.html"] {
-            color: rgb(125, 125, 214) !important;
-        }
