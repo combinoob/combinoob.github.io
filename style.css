@@ -1,0 +1,135 @@
+/* Add custom styles for the sidebar */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidebar .close-btn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        /* Styles for the toggle button */
+        .toggle-mode {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 5);
+        }
+
+        /* Add styling for the quote */
+        .quote {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .quote-icon {
+            font-size: 36px;
+            margin-right: 5px;
+        }
+
+        .quote-text {
+            font-style: italic;
+            font-size: 20px;
+        }
+
+        .quote-author {
+            font-size: 18px;
+            margin-top: 10px;
+            display: block;
+        }
+
+
+        section {
+            margin-bottom: 40px; /* Increase margin bottom for better separation */
+        }
+
+        section h3 {
+            font-size: 24px; /* Increase font size for section headings */
+            margin-bottom: 15px; /* Adjust margin bottom for spacing */
+        }
+
+        section p {
+            font-size: 18px; /* Increase font size for paragraphs */
+            line-height: 1.6; /* Adjust line height for better readability */
+            margin-bottom: 20px; /* Adjust margin bottom for spacing */
+        }
+
+        section ul {
+            font-size: 18px; /* Increase font size for list items */
+            line-height: 1.6; /* Adjust line height for better readability */
+            margin-bottom: 20px; /* Adjust margin bottom for spacing */
+        }
+
+        section ul li {
+        margin-bottom: 5px; /* Adjust margin bottom for spacing between list items */
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .display-4 {
+            animation: slideIn 1.5s ease forwards;
+        }
+
+        .dark a {
+            color: #ffffff !important; /* Set link color to white */
+        }
+
+        /* Additional styling for the image */
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .navbar-nav .nav-link[href="index.html"] {
+            color: rgb(60, 60, 205) !important;
+        }
+
+        .dark .navbar-nav .nav-link[href="index.html"] {
+            color: rgb(125, 125, 214) !important;
+        }
